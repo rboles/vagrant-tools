@@ -1,0 +1,195 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font:100% arial,sans-serif;
+    text-align:center;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+    color:#00F;
+    text-decoration:none;
+    font-weight:normal;
+}
+
+div#ribbon {
+    width:100%;
+    padding-top:6px;
+    padding-bottom:4px;
+    text-align:left;
+    background:#EEE;
+    border-bottom:1px solid #000;
+}
+
+div#ribbon span {
+    padding-left:16px;
+}
+
+div#ribbon .icon {
+    width:16px;
+    height:16px;
+}
+
+div#ribbon a, a:link, a:visited, a:hover, a:active {
+    color:#00B;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+div#header {
+    margin-top:16px;
+    position:relative;
+}
+
+div#header .title {
+    font-weight: bold;
+    font-size:130%;
+}
+
+div#container {
+    text-align:left;
+}
+
+div#content p {
+    line-height:1.4;
+}
+
+div#navigation {
+    background:#B9CAFF;
+}
+
+div#extra {
+    background:#FF8539;
+}
+
+div#footer {}
+
+div#container {
+    width:700px;
+    margin:0 auto;
+}
+
+div#navigation {
+    float:right;
+    width:350px;
+}
+
+div#extra {
+    float:left;
+    width:350px;
+}
+
+div#footer {
+    clear:both;width:100%;
+}
+
+.separator {
+    width:95%;
+    border-bottom:1px solid #888;
+    line-height:1px;
+    align:center;
+    margin: auto;
+    margin-top:16px;
+    margin-bottom:16px;
+}
+
+.workshop-container {
+    -moz-box-shadow:    10px 10px 5px #888;
+    -webkit-box-shadow: 10px 10px 5px #888;
+    box-shadow:         10px 10px 5px #888;
+    background-color:#EEEEEE;
+    border-radius:6px;
+    border:1px solid #777777;
+    padding:8px;
+}
+
+.workshop {}
+
+.workshop .title {}
+
+.workshop .body {
+    padding-top:8px;
+}
+
+.workshop .typeSelect {
+    width: 120px;
+}
+
+.workshop .materialSelect {
+    width: 96px;
+}
+
+.workshop .itemSelect {
+    width: 160px;
+}
+
+.workshop .itemName {
+    font-weight: bold;
+}
+
+.workshop .itemType {
+    font-style: italic;
+}
+
+.workshop .result {
+    float:right;
+    width:240px;
+    margin-top:46px;
+    text-align:center;
+    padding:4px;
+    border: 1px solid #000;
+    background-color:#FFFF99;
+    border-radius:4px;
+}
+
+.workshop .result .resultNone {
+    font-style: italic;
+}
+
+.workshop .result .itemMaterialName {
+    font-weight: bold;
+}
+
+.workshop .result .itemName {
+    font-weight: bold;
+}
+
+.workshop .result .itemId {
+    display: none;
+}
+
+.workshop .result .itemTypeName {
+    display: none;
+}
+
+.workshop .summary {
+    margin-top: 16px;
+    padding: 6px;
+}
+
+.workshop .summary .itemMaterialName {
+    font-weight: bold;
+}
+
+.workshop .summary .itemName {
+    font-weight: bold;
+}
+
+.workshop .summary .itemId {
+    display: none;
+}
+
+.workshop .summary .itemTypeName {
+    display: none;
+}
+
+.about {
+    padding: 16px;
+}
+
+.about a, a:link, a:visited, a:hover, a:active {
+    color:#00F;
+    font-weight:normal;
+}

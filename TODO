@@ -1,0 +1,5 @@
+:: VagrantTools :: TODO
+
+ - "Swap" button
+ - Handle REST exceptions
+ - Return 404 if item not found

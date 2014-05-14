@@ -1,0 +1,814 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="Vagrant Story Weapon and Armor Combo API" />
+    <meta name="keywords" content="sboles Scala Lift REST Vagrant Story Square" />
+    <title>Vagrant API</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <script id="jquery" src="../classpath/jquery.js" type="text/javascript"/>
+  </head>
+  <body>
+    <div id="ribbon">
+      <span>
+        <a href="../">
+        <img class="icon" src="../images/anvil-icon.png" />
+        Vagrant Workshop</a>
+      </span>
+    </div>
+    <div id="container">
+      <div id="header">
+        <table>
+          <tbody>
+            <tr>
+              <td><img src="../images/api-icon.gif" /></td>
+              <td><span class="title">Vagrant API</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="separator" style="margin-top:8px;"></div>
+
+      <div id="content">
+
+        <div class="toc">
+          <div class="title">
+            <span class="url">
+              <a name="toc">Contents</a>
+            </span>
+          </div>
+          <ul>
+            <li><a href="#notes">Notes</a></li>
+            <li><a href="#material_types">material_types</a></li>
+            <li><a href="#armor_types">armor_types</a></li>
+            <li><a href="#weapon_types">weapon_types</a></li>
+            <li><a href="#armor_items">armor_items</a></li>
+            <li><a href="#weapon_items">weapon_items</a></li>
+            <li><a href="#armor_material_combo">armor_material_combo</a></li>
+            <li><a href="#weapon_material_combo">weapon_material_combo</a></li>
+            <li><a href="#armor_combo">armor_combo</a></li>
+            <li><a href="#weapon_combo">weapon_combo</a></li>
+          </ul>
+        </div>
+
+        <div class="api">
+          <div class="title">
+            <span class="url"><a name="notes">Notes</a></span>
+          </div>
+          <div class="desc">
+            <div class="concept">
+              Items and materials marked as <i>stronger</i> or <i>weaker</i> are the result of combinations. These items and materials are <i>not</i> atomic.
+            </div>
+            <div style="margin-top:8px;">
+              Some materials only apply to certain items. For example, <i>wood</i> is only ever found in shields and <i>leather</i> is only ever found in armor.
+            </div>
+            <div style="margin-top:8px;">
+              Armor only combines with armor; weapons only combine
+              with weapons; shields only combine with shields.
+            </div>
+            <div style="margin-top:8px;">
+              Both the material and item types determine the result of a
+              material combination.
+            </div>
+            <div style="margin-top:8px;">
+              The order of elements in a combination matters. If you
+              don't get a result, try swapping the elements.
+            </div>
+          </div>
+          <div><a href="#toc">top</a></div>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="api">
+          <div class="title">
+            <span class="url">
+              <a name="material_types">material_types</a>
+            </span>
+          </div>
+          <div class="desc">
+            <div>
+              Returns material types.
+            </div>
+          </div>
+          <div class="params">
+            <table>
+              <tbody>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Value</th>
+                  <th>Description</th>
+                </tr>
+                <tr>
+                  <td><strong>id</strong></td>
+                  <td>Material type ID</td>
+                  <td>
+                    Return material type matching ID
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>atomic</strong></td>
+                  <td>T, F</td>
+                  <td>
+                    <div><strong>T</strong>
+                    Include atomic materials
+                    </div>
+                    <div><strong>F</strong>
+                    Exclude atomic materials
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>armor</strong></td>
+                  <td>T, F</td>
+                  <td>
+                    <div><strong>T</strong>
+                    Include armor materials
+                    </div>
+                    <div><strong>F</strong>
+                    Exclude armor materials
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>shield</strong></td>
+                  <td>T, F</td>
+                  <td>
+                    <div><strong>T</strong>
+                    Include shield materials
+                    </div>
+                    <div><strong>F</strong>
+                    Exclude shield materials
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>weapon</strong></td>
+                  <td>T, F</td>
+                  <td>
+                    <div><strong>T</strong>
+                    Include weapon materials
+                    </div>
+                    <div><strong>F</strong>
+                    Exclude weapon materials
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="examples">
+            <div><strong>Examples</strong></div>
+            <div class="example">
+              <div>
+                <div>Get all materials</div>
+                <div class="exampleUrl">
+                  <a href="material_types.json">
+                  material_types.json</a>
+                </div>
+                <div class="exampleUrl">
+                  <a href="material_types.xml">
+                  material_types.xml</a>
+                </div>
+              </div>
+            </div>
+            <div class="example">
+              <div>
+                <div>Get atomic weapon materials</div>
+                <div class="exampleUrl">
+                  <a href="material_types.json?atomic=T&amp;weapon=T">
+                  material_types.json?atomic=T&amp;weapon=T</a>
+                </div>
+                <div class="exampleUrl">
+                  <a href="material_types.xml?atomic=T&amp;weapon=T">
+                  material_types.xml?atomic=T&amp;weapon=T</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div><a href="#toc">top</a></div>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="api">
+          <div class="title">
+            <span class="url">
+              <a name="armor_types">armor_types</a>
+            </span>
+          </div>
+          <div class="desc">
+            <div>
+              Returns armor types.
+            </div>
+          </div>
+          <div class="params">
+            <table>
+              <tbody>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Value</th>
+                  <th>Description</th>
+                </tr>
+                <tr>
+                  <td><strong>id</strong></td>
+                  <td>Armor type ID</td>
+                  <td>
+                    Return armor type matching ID
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="examples">
+            <div><strong>Examples</strong></div>
+            <div class="example">
+              <div>
+                <div>Get all armor types</div>
+                <div class="exampleUrl">
+                  <a href="armor_types.json">
+                  armor_types.json</a>
+                </div>
+                <div class="exampleUrl">
+                  <a href="armor_types.xml">
+                  armor_types.xml</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div><a href="#toc">top</a></div>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="api">
+          <div class="title">
+            <span class="url">
+              <a name="weapon_types">weapon_types</a>
+            </span>
+          </div>
+          <div class="desc">
+            <div>
+              Returns weapon types.
+            </div>
+          </div>
+          <div class="params">
+            <table>
+              <tbody>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Value</th>
+                  <th>Description</th>
+                </tr>
+                <tr>
+                  <td><strong>id</strong></td>
+                  <td>Weapon type ID</td>
+                  <td>
+                    Return weapon type matching ID
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="examples">
+            <div><strong>Examples</strong></div>
+            <div class="example">
+              <div>
+                <div>Get all weapon types</div>
+                <div class="exampleUrl">
+                  <a href="weapon_types.json">
+                  weapon_types.json</a>
+                </div>
+                <div class="exampleUrl">
+                  <a href="weapon_types.xml">
+                  weapon_types.xml</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div><a href="#toc">top</a></div>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="api">
+          <div class="title">
+            <span class="url">
+              <a name="armor_items">armor_items</a>
+            </span>
+          </div>
+          <div class="desc">
+            <div>
+              Returns armor items.
+            </div>
+          </div>
+          <div class="params">
+            <table>
+              <tbody>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Value</th>
+                  <th>Description</th>
+                </tr>
+                <tr>
+                  <td><strong>id</strong></td>
+                  <td>Armor ID</td>
+                  <td>
+                    Return armor item matching ID
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>atomic</strong></td>
+                  <td>T, F</td>
+                  <td>
+                    <div>
+                      <strong>T</strong>
+                      Include atomic armor items.
+                    </div>
+                    <div>
+                      <strong>F</strong>
+                      Exclude atomic armor items.
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>type_id</strong></td>
+                  <td>Armor type ID</td>
+                  <td>
+                    Return armor items matching type ID
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="examples">
+            <div><strong>Examples</strong></div>
+            <div class="example">
+              <div>
+                <div>Get atomic armor items</div>
+                <div class="exampleUrl">
+                  <a href="armor_items.json?atomic=T">
+                  armor_items.json?atomic=T</a>
+                </div>
+                <div class="exampleUrl">
+                  <a href="armor_items.xml?atomic=T">
+                  armor_items.xml?atomic=T</a>
+                </div>
+              </div>
+            </div>
+            <div class="example">
+              <div>
+                <div>Get atomic leg armor items</div>
+                <div class="exampleUrl">
+                  <a href="armor_items.json?atomic=T&amp;type_id=4">
+                  armor_items.json?atomic=T&amp;type_id=4</a>
+                </div>
+                <div class="exampleUrl">
+                  <a href="armor_items.xml?atomic=T&amp;type_id=4">
+                  armor_items.xml?atomic=T&amp;type_id=4</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div><a href="#toc">top</a></div>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="api">
+          <div class="title">
+            <span class="url">
+              <a name="weapon_items">weapon_items</a>
+            </span>
+          </div>
+          <div class="desc">
+            <div>
+              Returns weapon items.
+            </div>
+          </div>
+          <div class="params">
+            <table>
+              <tbody>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Value</th>
+                  <th>Description</th>
+                </tr>
+                <tr>
+                  <td><strong>id</strong></td>
+                  <td>Weapon ID</td>
+                  <td>
+                    Return weapon item matching ID
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>atomic</strong></td>
+                  <td>T, F</td>
+                  <td>
+                    <div>
+                      <strong>T</strong>
+                      Include atomic weapon items.
+                    </div>
+                    <div>
+                      <strong>F</strong>
+                      Exclude atomic weapon items.
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>type_id</strong></td>
+                  <td>Weapon type ID</td>
+                  <td>
+                    Return weapon items matching type ID
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="examples">
+            <div><strong>Examples</strong></div>
+            <div class="example">
+              <div>
+                <div>Get atomic weapon items</div>
+                <div class="exampleUrl">
+                  <a href="weapon_items.json?atomic=T">
+                  weapon_items.json?atomic=T</a>
+                </div>
+                <div class="exampleUrl">
+                  <a href="weapon_items.xml?atomic=T">
+                  weapon_items.xml?atomic=T</a>
+                </div>
+              </div>
+            </div>
+            <div class="example">
+              <div>
+                <div>Get atomic sword weapon items</div>
+                <div class="exampleUrl">
+                  <a href="weapon_items.json?atomic=T&amp;type_id=10">
+                  weapon_items.json?atomic=T&amp;type_id=10</a>
+                </div>
+                <div class="exampleUrl">
+                  <a href="weapon_items.xml?atomic=T&amp;type_id=10">
+                  weapon_items.xml?atomic=T&amp;type_id=10</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div><a href="#toc">top</a></div>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="api">
+          <div class="title">
+            <span class="url">
+              <a name="armor_material_combo">
+              armor_material_combo</a>
+            </span>
+          </div>
+          <div class="desc">
+            <div>
+              Returns armor material combinations. Requires one of either
+              <strong>m1</strong> or <strong>m2</strong>. The order of
+              elements in a combination matters; if you don't get a result,
+              try swapping elements.
+            </div>
+          </div>
+          <div class="params">
+            <table>
+              <tbody>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Value</th>
+                  <th>Description</th>
+                </tr>
+                <tr>
+                  <td><strong>m1</strong></td>
+                  <td>Material type ID</td>
+                  <td>
+                    Material type in slot 1
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>m2</strong></td>
+                  <td>Material type ID</td>
+                  <td>
+                    Material type in slot 2
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>t1</strong></td>
+                  <td>Item type ID</td>
+                  <td>
+                    Item type ID of material: m1.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>t2</strong></td>
+                  <td>Item type ID</td>
+                  <td>
+                    Item type ID of material: m2.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="examples">
+            <div><strong>Examples</strong></div>
+            <div class="example">
+              <div>
+                <div>Get the materials that result from combining
+                bronze and hagane armor.</div>
+                <div class="exampleUrl">
+                  <a href="armor_material_combo.json?m1=3&amp;m2=7">
+                  armor_material_combo.json?m1=3&amp;m2=7</a>
+                </div>
+                <div class="exampleUrl">
+                  <a href="armor_material_combo.xml?m1=3&amp;m2=7">
+                  armor_material_combo.xml?m1=3&amp;m2=7</a>
+                </div>
+              </div>
+              <div>
+                <div>Get the materials that result from combining
+                bronze and hagane armor and a helm is in slot 1.</div>
+                <div class="exampleUrl">
+                  <a href="armor_material_combo.json?m1=3&amp;m2=7&amp;t1=3">
+                  armor_material_combo.json?m1=3&amp;m2=7&amp;t1=3</a>
+                </div>
+                <div class="exampleUrl">
+                  <a href="armor_material_combo.xml?m1=3&amp;m2=7&amp;t1=3">
+                  armor_material_combo.xml?m1=3&amp;m2=3&amp;t1=3</a>
+                </div>
+              </div>
+              <div>
+                <div>Get the materials that result from combining
+                bronze and a hagane armor where a helm is in slot 1
+                and leg armor is in slot 2.</div>
+                <div class="exampleUrl">
+                  <a href="armor_material_combo.json?m1=3&amp;m2=7&amp;t1=3&amp;t2=4">
+                  armor_material_combo.json?m1=3&amp;m2=7&amp;t1=3&amp;t2=4</a>
+                </div>
+                <div class="exampleUrl">
+                  <a href="armor_material_combo.xml?m1=3&amp;m2=7&amp;t1=3&amp;t2=4">
+                  armor_material_combo.xml?m1=3&amp;m2=3&amp;t1=3&amp;t2=4</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div><a href="#toc">top</a></div>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="api">
+          <div class="title">
+            <span class="url">
+              <a name="weapon_material_combo">
+              weapon_material_combo</a>
+            </span>
+          </div>
+          <div class="desc">
+            <div>
+              Returns weapon material combinations. Requires one of either
+              <strong>m1</strong> or <strong>m2</strong>. The order of
+              elements in a combination matters; if you don't get a result,
+              try swapping elements.
+            </div>
+          </div>
+          <div class="params">
+            <table>
+              <tbody>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Value</th>
+                  <th>Description</th>
+                </tr>
+                <tr>
+                  <td><strong>m1</strong></td>
+                  <td>Material type ID</td>
+                  <td>
+                    Material type in slot 1
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>m2</strong></td>
+                  <td>Material type ID</td>
+                  <td>
+                    Material type in slot 2
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>t1</strong></td>
+                  <td>Item type ID</td>
+                  <td>
+                    Item type ID of material: m1.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>t2</strong></td>
+                  <td>Item type ID</td>
+                  <td>
+                    Item type ID of material: m2.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="examples">
+            <div><strong>Examples</strong></div>
+            <div class="example">
+              <div>
+                <div>Get the materials that result from combining iron
+                and silver weapons.</div>
+                <div class="exampleUrl">
+                  <a href="weapon_material_combo.json?m1=5&amp;m2=9">
+                  weapon_material_combo.json?m1=5&amp;m2=9</a>
+                </div>
+                <div class="exampleUrl">
+                  <a href="weapon_material_combo.xml?m1=5&amp;m2=9">
+                  weapon_material_combo.xml?m1=5&amp;m2=9</a>
+                </div>
+              </div>
+              <div>
+                <div>Get the materials that result from combining iron
+                and silver weapons where a sword is in slot 1.</div>
+                <div class="exampleUrl">
+                  <a href="weapon_material_combo.json?m1=5&amp;m2=9&amp;t1=10">
+                  weapon_material_combo.json?m1=5&amp;m2=9&amp;t1=10</a>
+                </div>
+                <div class="exampleUrl">
+                  <a href="weapon_material_combo.xml?m1=5&amp;m2=9&amp;t1=10">
+                  weapon_material_combo.xml?m1=5&amp;m2=9&amp;t1=10</a>
+                </div>
+              </div>
+              <div>
+                <div>Get the materials that result from combining iron
+                and silver weapons where a sword is in slot 1 and a
+                mace is in slot 2.</div>
+                <div class="exampleUrl">
+                  <a href="weapon_material_combo.json?m1=5&amp;m2=9&amp;t1=10&amp;t2=7">
+                  weapon_material_combo.json?m1=5&amp;m2=9&amp;t1=10&amp;t2=7</a>
+                </div>
+                <div class="exampleUrl">
+                  <a href="weapon_material_combo.xml?m1=5&amp;m2=9&amp;t1=10&amp;t2=7">
+                  weapon_material_combo.xml?m1=5&amp;m2=9&amp;t1=10&amp;t2=7</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div><a href="#toc">top</a></div>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="api">
+          <div class="title">
+            <span class="url">
+              <a name="armor_combo">
+              armor_combo</a>
+            </span>
+          </div>
+          <div class="desc">
+            <div>
+              Returns armor item combinations. Requires one of either
+              <strong>a1</strong> or <strong>a2</strong>. The order of
+              elements in a combination matters; if you don't get a result,
+              try swapping elements.
+            </div>
+          </div>
+          <div class="params">
+            <table>
+              <tbody>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Value</th>
+                  <th>Description</th>
+                </tr>
+                <tr>
+                  <td><strong>a1</strong></td>
+                  <td>Armor item ID</td>
+                  <td>
+                    Armor item in slot 1
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>a2</strong></td>
+                  <td>Armor item ID</td>
+                  <td>
+                    Armor item in slot 2
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="examples">
+            <div><strong>Examples</strong></div>
+            <div class="example">
+              <div>
+                <div>Get the armor items that result from putting a
+                Breastplate in slot 1</div>
+                <div class="exampleUrl">
+                  <a href="armor_combo.json?a1=40">
+                  armor_combo.json?a1=40</a>
+                </div>
+                <div class="exampleUrl">
+                  <a href="armor_combo.xml?a1=40">
+                  armor_combo.xml?a1=40</a>
+                </div>
+              </div>
+              <div>
+                <div>Get the result of combining a Breastplate in slot
+                1 and Dread Leggings in slot 2.</div>
+                <div class="exampleUrl">
+                  <a href="armor_combo.json?a1=40&amp;a2=110">
+                  armor_combo.json?a1=3&amp;a2=110</a>
+                </div>
+                <div class="exampleUrl">
+                  <a href="armor_combo.xml?a1=40&amp;a2=110">
+                  armor_combo.xml?a1=40&amp;a2=110</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div><a href="#toc">top</a></div>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="api">
+          <div class="title">
+            <span class="url">
+              <a name="weapon_combo">weapon_combo</a>
+            </span>
+          </div>
+          <div class="desc">
+            <div>
+              Returns weapon item combinations. Requires one of either
+              <strong>w1</strong> or <strong>w2</strong>. The order of
+              elements in a combination matters; if you don't get a result,
+              try swapping elements.
+            </div>
+          </div>
+          <div class="params">
+            <table>
+              <tbody>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Value</th>
+                  <th>Description</th>
+                </tr>
+                <tr>
+                  <td><strong>w1</strong></td>
+                  <td>Weapon item ID</td>
+                  <td>
+                    Weapon item in slot 1
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>w2</strong></td>
+                  <td>Weapon item ID</td>
+                  <td>
+                    Weapon item in slot 2
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="examples">
+            <div><strong>Examples</strong></div>
+            <div class="example">
+              <div>
+                <div>Get the weapon items that result from putting a
+                War Maul in slot 1</div>
+                <div class="exampleUrl">
+                  <a href="weapon_combo.json?w1=116">
+                  weapon_combo.json?w1=116</a>
+                </div>
+                <div class="exampleUrl">
+                  <a href="weapon_combo.xml?w1=116">
+                  weapon_combo.xml?w1=116</a>
+                </div>
+              </div>
+              <div>
+                <div>Get the result of combining a War Maul in slot
+                1 and a Halberd in slot 2.</div>
+                <div class="exampleUrl">
+                  <a href="weapon_combo.json?w1=116&amp;w2=61">
+                  weapon_combo.json?w1=116&amp;w2=61</a>
+                </div>
+                <div class="exampleUrl">
+                  <a href="weapon_combo.xml?w1=116&amp;w2=61">
+                  weapon_combo.xml?w1=116&amp;w2=61</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div><a href="#toc">top</a></div>
+        </div>
+
+        <div class="separator"></div>
+
+      </div>
+    </div>
+  </body>
+</html>
